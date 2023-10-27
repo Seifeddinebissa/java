@@ -35,7 +35,11 @@ public class Aquatic extends Animal{
         boolean ok=false;
 
         if (obj instanceof Aquatic){
-            ok = (age == ((Aquatic) obj).age && name.equals(((Aquatic) obj).getName()) && habitat.equals(((Aquatic) obj).getHabitat()));
+            ok = (
+                    age == ((Aquatic) obj).age
+                    && name.equals(((Aquatic) obj).getName())
+                    && habitat.equals(((Aquatic) obj).getHabitat())
+            );
         }
         return ok;
     }

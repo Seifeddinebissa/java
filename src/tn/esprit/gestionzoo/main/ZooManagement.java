@@ -16,15 +16,24 @@ public class ZooManagement {
 
 
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
+        Animal dog2 = new Animal("Canine", "lll", 2, true);
+        Animal dog3 = new Animal("Canine", "l", 2, true);
+        Animal dog4 = new Animal("Canine", "lrr", -1, true);
 
-
-        System.out.println(myZoo.addAnimal(lion));
-        System.out.println(myZoo.addAnimal(dog));
-
+        try {
+            myZoo.addAnimal(lion);
+            myZoo.addAnimal(dog);
+            myZoo.addAnimal(dog);
+            myZoo.addAnimal(dog);
+        }catch (ZooFullException z){
+            z.getMessage();
+        }catch (InvalidAgeException i){
+            i.getMessage();
+        }
         myZoo.displayAnimals();
 
         System.out.println(myZoo.searchAnimal(dog));
-        Animal dog2 = new Animal("Canine", "lll", 2, true);
+
         System.out.println(myZoo.searchAnimal(dog2));
 
         //   System.out.println(myZoo.removeAnimal(dog));
@@ -33,16 +42,12 @@ public class ZooManagement {
 
         System.out.println(myZoo);
 
-        myZoo.addAnimal(lion);
-        myZoo.addAnimal(dog);
-        myZoo.addAnimal(dog2);
+
         myZoo.displayAnimals();
-        System.out.println("a" + myZoo.removeAnimal(lion));
-        myZoo.displayAnimals();
-        System.out.println("a" + myZoo.removeAnimal(dog2));
-        myZoo.displayAnimals();
-        System.out.println("a" + myZoo.removeAnimal(dog));
-        myZoo.displayAnimals();
+        //System.out.println("a" + myZoo.removeAnimal(dog));
+        //myZoo.displayAnimals();
+        /*System.out.println("a" + myZoo.removeAnimal(dog));
+        myZoo.displayAnimals();*/
 
 //        System.out.println(tn.esprit.gestionzoo.entities.Zoo.comparerZoo(myZoo, notMyZoo));
 //        System.out.println(myZoo.isZooFull());
